@@ -1,7 +1,7 @@
-FROM python:alpine3.10
-COPY . /app
+FROM python:3.10
 WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE 8080
-ENTRYPOINT [ "python" ]
-CMD [ "server.py" ]
+# Copiamos el requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+COPY . .
+CMD ["/bin/bash", "docker-entrypoint.sh"]

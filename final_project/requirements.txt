@@ -3,3 +3,4 @@ ibm-watson==7.0.0
 python-dotenv
 pyJWT==2.7.0
 pylint
+gunicorn
